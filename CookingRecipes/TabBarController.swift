@@ -33,15 +33,21 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupTabBar()
     }
     
     private func setupTabBar() {
-        view.backgroundColor = .systemBackground
-        tabBar.tintColor = .label
+        view.backgroundColor = UIColor(named: "blueColor")
+        tabBar.tintColor = .white
         // добавил цвета кастомные цвета в таббар
         tabBar.isTranslucent = false
-        tabBar.barTintColor = UIColor(named: "orangeColor")
-        tabBar.unselectedItemTintColor = UIColor(named: "blueColor")
+//        tabBar.barTintColor = UIColor(named: "orangeColor")
+//        tabBar.unselectedItemTintColor = UIColor(named: "blueColor")
+        
+        tabBar.barTintColor = UIColor(named: "blueColor")
+        tabBar.unselectedItemTintColor = UIColor(named: "orangeColor")
+        
+
         
         let dataSource: [TabBarItem] = [.category, .main, .favourite]
         self.viewControllers = dataSource.map {
@@ -62,7 +68,7 @@ final class TabBarController: UITabBarController {
             $1.tabBarItem.title = dataSource[$0].title
             $1.tabBarItem.image = UIImage(systemName: dataSource[$0].iconName)
             $1.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: .zero, bottom: -5, right: .zero)
-            $1.tabBarController?.tabBar.backgroundColor = UIColor(named: "orangeColor")
+            $1.tabBarController?.tabBar.backgroundColor = UIColor(named: "blueColor")
         }
     }
     

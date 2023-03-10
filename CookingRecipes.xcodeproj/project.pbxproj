@@ -16,6 +16,8 @@
 		635544A329BB30FA00C76168 /* CategoryRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635544A229BB30FA00C76168 /* CategoryRecipesViewController.swift */; };
 		635544A629BB315700C76168 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635544A529BB315700C76168 /* FavoriteViewController.swift */; };
 		635544A929BB349100C76168 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635544A829BB349100C76168 /* PopularCell.swift */; };
+		635544AC29BB389200C76168 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635544AB29BB389200C76168 /* GradientView.swift */; };
+		635544AF29BB3B0700C76168 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635544AE29BB3B0700C76168 /* RecipeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		635544A229BB30FA00C76168 /* CategoryRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRecipesViewController.swift; sourceTree = "<group>"; };
 		635544A529BB315700C76168 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		635544A829BB349100C76168 /* PopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
+		635544AB29BB389200C76168 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		635544AE29BB3B0700C76168 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		6355448529BB2D7700C76168 /* CookingRecipes */ = {
 			isa = PBXGroup;
 			children = (
+				635544AD29BB3AF700C76168 /* Models */,
 				6355449A29BB2DE200C76168 /* TabBarController.swift */,
 				635544A429BB313800C76168 /* FavoriteScreen */,
 				6355449F29BB2EAE00C76168 /* CategoryRecipesScreen */,
@@ -144,8 +149,17 @@
 			isa = PBXGroup;
 			children = (
 				635544A829BB349100C76168 /* PopularCell.swift */,
+				635544AB29BB389200C76168 /* GradientView.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		635544AD29BB3AF700C76168 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				635544AE29BB3B0700C76168 /* RecipeData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +238,8 @@
 				6355448729BB2D7700C76168 /* AppDelegate.swift in Sources */,
 				635544A629BB315700C76168 /* FavoriteViewController.swift in Sources */,
 				6355448929BB2D7700C76168 /* SceneDelegate.swift in Sources */,
+				635544AF29BB3B0700C76168 /* RecipeData.swift in Sources */,
+				635544AC29BB389200C76168 /* GradientView.swift in Sources */,
 				635544A929BB349100C76168 /* PopularCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
