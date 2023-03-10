@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol PopularCellDelegate {
     func didPressFavoriteButton(_ cell: PopularCell, button: UIButton)
@@ -42,7 +43,7 @@ class PopularCell: UITableViewCell {
     }
     
     override func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
+        super.layoutSublayers(of: self.layer)
         
         gradientView = GradientView(frame: titleLabel.bounds)
     }
@@ -54,6 +55,8 @@ class PopularCell: UITableViewCell {
             self.animateButton(sender, playing: false)
             sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
+        
+        delegate?.didPressFavoriteButton(self, button: sender)
     }
     
     func configureCell(title: String, image: String) {
@@ -61,12 +64,13 @@ class PopularCell: UITableViewCell {
         if !image.contains("https") {
             foodImageView.image = UIImage(named: "beverage")
         } else {
-            foodImageView.image = UIImage(named: "bread")
+            foodImageView.kf.setImage(with: URL(string: image))
         }
     }
 }
 
 
+//MARK: - Configure Cell
 private extension PopularCell {
     func selectionStyleCell() {
         selectionStyle = .none
@@ -128,6 +132,7 @@ private extension PopularCell {
 }
 
 
+//MARK: - Layout Constraints
 private extension PopularCell {
     func addSubview() {
         contentView.addSubview(foodImageView)

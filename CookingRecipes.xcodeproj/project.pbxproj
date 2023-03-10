@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		634AF96129BB9FC800267A89 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 634AF96029BB9FC800267A89 /* Kingfisher */; };
+		634AF96329BBA12B00267A89 /* RecipeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634AF96229BBA12B00267A89 /* RecipeError.swift */; };
 		6355448729BB2D7700C76168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6355448629BB2D7700C76168 /* AppDelegate.swift */; };
 		6355448929BB2D7700C76168 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6355448829BB2D7700C76168 /* SceneDelegate.swift */; };
 		6355448B29BB2D7700C76168 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6355448A29BB2D7700C76168 /* MainViewController.swift */; };
@@ -23,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		634AF96229BBA12B00267A89 /* RecipeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeError.swift; sourceTree = "<group>"; };
 		6355448329BB2D7700C76168 /* CookingRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6355448629BB2D7700C76168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6355448829BB2D7700C76168 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634AF96129BB9FC800267A89 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				635544AE29BB3B0700C76168 /* RecipeData.swift */,
+				634AF96229BBA12B00267A89 /* RecipeError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +205,9 @@
 			dependencies = (
 			);
 			name = CookingRecipes;
+			packageProductDependencies = (
+				634AF96029BB9FC800267A89 /* Kingfisher */,
+			);
 			productName = CookingRecipes;
 			productReference = 6355448329BB2D7700C76168 /* CookingRecipes.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +236,9 @@
 				Base,
 			);
 			mainGroup = 6355447A29BB2D7700C76168;
+			packageReferences = (
+				634AF95F29BB9FC800267A89 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 6355448429BB2D7700C76168 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,6 +275,7 @@
 				635544AF29BB3B0700C76168 /* RecipeData.swift in Sources */,
 				635544AC29BB389200C76168 /* GradientView.swift in Sources */,
 				635544A929BB349100C76168 /* PopularCell.swift in Sources */,
+				634AF96329BBA12B00267A89 /* RecipeError.swift in Sources */,
 				635A81DE29BB4AEB008B3AAC /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +484,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		634AF95F29BB9FC800267A89 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		634AF96029BB9FC800267A89 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 634AF95F29BB9FC800267A89 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6355447B29BB2D7700C76168 /* Project object */;
 }

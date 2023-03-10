@@ -9,7 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    let listOfRecipes: [RecipeCard] = []
+    var listOfRecipes: [RecipeCard] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     let tableView = UITableView()
     var sectionName = "Popular Recipes"
@@ -20,9 +24,36 @@ class MainViewController: UIViewController {
         configurerAppearanceScreen()
         setupTableView()
         setLayout()
+        getPopularRecipe()
     }
+}
 
 
+//MARK: - Delegate for Heart Button
+extension MainViewController: PopularCellDelegate {
+    func didPressFavoriteButton(_ cell: PopularCell, button: UIButton) {
+        print("select recipe: \(cell.titleLabel.text!)")
+    }
+}
+
+extension MainViewController {
+    func getPopularRecipe() {
+        // проверка данных, если они есть => выходит из метода
+        if !listOfRecipes.isEmpty {
+            return
+        }
+        
+        NetworkService.shared.fetchRecipesPopularity { result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self.listOfRecipes = data.results
+                }
+            case .failure(_):
+                print("Error in load data for popular recipes")
+            }
+        }
+    }
 }
 
 
@@ -43,7 +74,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PopularCell.self), for: indexPath) as! PopularCell
         
-        //cell.delegate = self
+        cell.delegate = self
         
         if !listOfRecipes.isEmpty {
             let text = listOfRecipes[indexPath.row].title
@@ -75,7 +106,7 @@ private extension MainViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(PopularCell.self, forCellReuseIdentifier: String(describing: PopularCell.self))
         tableView.dataSource = self
-        //tableView.delegate = self
+        tableView.delegate = self
     }
     
     func setLayout() {
