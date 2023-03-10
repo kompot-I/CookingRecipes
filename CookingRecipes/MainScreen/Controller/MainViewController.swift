@@ -25,6 +25,19 @@ class MainViewController: UIViewController {
 
 }
 
+
+//MARK: - UITableViewDelegate
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! PopularCell
+        let favoriteName = cell.titleLabel.text!
+        
+        if let tabBarController = self.tabBarController, let vc = tabBarController.viewControllers?[1] as? MainViewController {
+        }
+    }
+}
+
+
 //MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,6 +60,7 @@ extension MainViewController: UITableViewDataSource {
         return listOfRecipes.count
     }
 }
+
 
 //MARK: - Setup TableView, Layout, configure appearance screen
 private extension MainViewController {
